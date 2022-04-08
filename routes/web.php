@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Boutique\CapitalController;
+use App\Http\Controllers\FirstController;
+use SebastianBergmann\CodeCoverage\Node\CrapIndex;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,16 @@ use App\Http\Controllers\Boutique\CapitalController;
 |
 */
 
-Route::get('/', [CapitalController::class, 'index']);
+// Route::get('/', function () {
+//    return view('Accueil');
+// });
+
+Route::get('/', [FirstController::class, 'index']);
+
+Route::get('/article/{id} ', [FirstController::class, 'article'])->name('voir_produit');
+
+Route::get('/category/{id} ', [FirstController::class, 'category'])->name('voir_produits_par_cat');
+
+
+
+
