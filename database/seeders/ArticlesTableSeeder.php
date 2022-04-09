@@ -17,77 +17,67 @@ class ArticlesTableSeeder extends Seeder
     {
         //
         $article= new Article();
-        $article-> nom = " Goonies";
-        $article-> prix_ht = 25;
-        $article-> description = "l petit garçon";
-        $article-> photo_produit = "slide 1.jpg";
+        $article-> nom = " Casque VR pro";
+        $article-> prix_ht = 300000;
+        $article-> description = "Permet une plus grande immersion dans le jeu";
+        $article-> photo_produit = "09.jpg";
         $article-> category_id=1;
         $article-> save();
 
         $article= new Article();
-        $article-> nom = "Rouge";
-        $article-> prix_ht = 35;
-        $article-> description = "Polo Vvip";
-        $article-> photo_produit = "polo 2.jpg";
+        $article-> nom = "Casque VR simple";
+        $article-> prix_ht = 280000;
+        $article-> description = "Un premier casque idéal pour commencer";
+        $article-> photo_produit = "26.jpg";
         $article-> category_id=1;
         $article-> save();
 
         $article= new Article();
-        $article-> nom = "blanc";
+        $article-> nom = "Casque VR simple";
+        $article-> prix_ht = 500000;
+        $article-> description = "Un premier casque idéal pour commencer";
+        $article-> photo_produit = "04.jpg";
+        $article-> category_id=1;
+        $article-> save();
+
+        $article= new Article();
+        $article-> nom = "Casque VR simple";
+        $article-> prix_ht = 700000;
+        $article-> description = "Un premier casque idéal pour commencer";
+        $article-> photo_produit = "05.jpg";
+        $article-> category_id=1;
+        $article-> save();
+
+        $article= new Article();
+        $article-> nom = "Casque VR simple";
+        $article-> prix_ht = 450000;
+        $article-> description = "Un premier casque idéal pour commencer";
+        $article-> photo_produit = "06.jpg";
+        $article-> category_id=1;
+        $article-> save();
+
+        $article= new Article();
+        $article-> nom = "Casque VR simple";
+        $article-> prix_ht = 250000;
+        $article-> description = "Un premier casque idéal pour commencer";
+        $article-> photo_produit = "07.jpg";
+        $article-> category_id=1;
+        $article-> save();
+
+        $article= new Article();
+        $article-> nom = "Casque VR simple";
+        $article-> prix_ht = 300000;
+        $article-> description = "Un premier casque idéal pour commencer";
+        $article-> photo_produit = "08.jpg";
+        $article-> category_id=1;
+        $article-> save();
+
+        $article= new Article();
+        $article-> nom = "PS4";
         $article-> prix_ht = 45;
-        $article-> description = "comme ça";
-        $article-> photo_produit = "polo 3.jpg";
-        $article-> category_id=8;
-        $article-> save();
-
-        $article= new Article();
-        $article-> nom = "ciel";
-        $article-> prix_ht = 55;
-        $article-> description = "Polo des nuages";
-        $article-> photo_produit = "polo 4.jpg";
+        $article-> description = "Playstation4 Pro";
+        $article-> photo_produit = "32.jpg";
         $article-> category_id=2;
         $article-> save();
-
-        $article= new Article();
-        $article-> nom = "polo 4";
-        $article-> prix_ht = 65;
-        $article-> description = "comme si";
-        $article-> photo_produit = "polo 5.jpg";
-        $article-> category_id=2;
-        $article-> save();
-
-        $article= new Article();
-        $article-> nom = "polo 5";
-        $article-> prix_ht = 75;
-        $article-> description = "patati";
-        $article-> photo_produit = "polo 6.jpg";
-        $article-> category_id=2;
-        $article-> save();
-
-        $article= new Article();
-        $article-> nom = "polo 6";
-        $article-> prix_ht = 85;
-        $article-> description = "Patata";
-        $article-> photo_produit = "polo 7.jpg";
-        $article-> category_id=3;
-        $article-> save();
-
-        $article= new Article();
-        $article-> nom = "plol 7";
-        $article-> prix_ht = 95;
-        $article-> description = "patato";
-        $article-> photo_produit = "polo 8.jpg";
-        $article-> category_id=3;
-        $article-> save();
-
-        $article= new Article();
-        $article-> nom = "polo patate";
-        $article-> prix_ht = 105;
-        $article-> description = "patate";
-        $article-> photo_produit = "polo 9.jpg";
-        $article-> category_id=3;
-        $article-> save();
-
-
     }
 }

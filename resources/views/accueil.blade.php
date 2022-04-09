@@ -52,11 +52,6 @@
 <body>
 
 @include('templates.header')
-
-
-
-
-
 @yield('content')
 
 

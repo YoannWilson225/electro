@@ -239,8 +239,6 @@
                       <li><a class="dropdown-item" href="account-single-ticket.html">Single Ticket</a></li>
                     </ul>
                   </li>
-
-
                   <li><a class="dropdown-item" href="account-signin.html">Sign In / Sign Up</a></li>
                   <li><a class="dropdown-item" href="account-password-recovery.html">Changer Mot de Passe</a></li>
                 </ul>

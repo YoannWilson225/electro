@@ -23,10 +23,6 @@
 
 
      @include('templates.header')
-
-
-
-
         @yield('content')
 
 
