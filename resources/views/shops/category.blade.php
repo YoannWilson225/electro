@@ -1,4 +1,4 @@
-@extends('shop')
+@extends('boutique')
 
 @section('content')
 

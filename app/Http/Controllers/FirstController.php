@@ -14,8 +14,7 @@ class FirstController extends Controller
         $articles = Article::all();
         //dd($articles);
         $categories = Category::where('is_online',1)->get();
-
-        return view('shop.index', compact('articles', 'categories'));
+        return view('shops.index', compact('articles', 'categories'));
 
     }
 
@@ -25,7 +24,6 @@ class FirstController extends Controller
         //dd($request->id);
        // $categories = Category::where('is_online',1)->get();
         $article = Article::find($request->id);
-
         return view('shop.article', compact('article'));
     }
 

@@ -1,3 +1,4 @@
+
 <header class="shadow-sm">
     <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
     <div class="navbar-sticky bg-light">
@@ -77,7 +78,7 @@
                 <div class="dropdown-menu px-2 pb-4">
                   <div class="d-flex flex-wrap flex-sm-nowrap">
                     <div class="mega-dropdown-column pt-3 pt-sm-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/shop/departments/01.jpg" alt="Casques"></a>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/accs.jpg" alt="Casques"></a>
                         <h6 class="fs-base mb-2">Casques</h6>
                         <ul class="widget-list">
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Women's clothing</a></li>
@@ -87,8 +88,8 @@
                       </div>
                     </div>
                     <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/shop/departments/02.jpg" alt="Manettes"></a>
-                        <h6 class="fs-base mb-2">Manettes</h6>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/32.jpg" alt="Manettes"></a>
+                        <h6 class="fs-base mb-2">Consoles</h6>
                         <ul class="widget-list">
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Women's shoes</a></li>
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Men's shoes</a></li>
@@ -97,8 +98,8 @@
                       </div>
                     </div>
                     <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/shop/departments/03.jpg" alt="Smartphones"></a>
-                        <h6 class="fs-base mb-2">Smartphones</h6>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/lg03.jpg" alt="Smartphones"></a>
+                        <h6 class="fs-base mb-2">Accéssoires</h6>
                         <ul class="widget-list">
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Smartphones &amp; Tablets</a></li>
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Wearable gadgets</a></li>
@@ -109,32 +110,12 @@
                   </div>
                   <div class="d-flex flex-wrap flex-sm-nowrap">
                     <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/shop/departments/04.jpg" alt="Playstations"></a>
-                        <h6 class="fs-base mb-2">Playstation &amp; CD</h6>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/03.jpg" alt="Playstations"></a>
+                        <h6 class="fs-base mb-2">Ordinateurs</h6>
                         <ul class="widget-list">
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Home furniture</a></li>
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Office furniture</a></li>
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Lighting and decoration</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/shop/departments/05.jpg" alt="Accessoires"></a>
-                        <h6 class="fs-base mb-2">Accessoires</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Hats</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Sunglasses</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Bags</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/shop/departments/06.jpg" alt="VR"></a>
-                        <h6 class="fs-base mb-2">Casques VR</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Kid's toys</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Video games</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Outdoor / Camping</a></li>
                         </ul>
                       </div>
                     </div>
@@ -144,10 +125,9 @@
             </ul>
             <!-- Primary menu-->
             <ul class="navbar-nav">
-              <li class="nav-item active"><a class="nav-link toggle" id="links" href="#" data-bs-toggle="dropdown">Accueil</a>
-
+              <li class="nav-item active"><a class="nav-link toggle" id="links" href="{{route('accueil')}}" data-bs-toggle="dropdown">Accueil</a>
               </li>
-              <li class="nav-item"><a class="nav-link toggle" href="#" data-bs-toggle="dropdown" id="links">Boutique</a>
+              <li class="nav-item"><a class="nav-link toggle" href="{{route('boutique')}}" data-bs-toggle="dropdown" id="links">Boutique</a>
                 <div class="dropdown-menu p-0">
                   <div class="d-flex flex-wrap flex-sm-nowrap px-2">
                     <div class="mega-dropdown-column pt-1 pt-lg-4 pb-4 px-2 px-lg-3">
@@ -239,6 +219,8 @@
                       <li><a class="dropdown-item" href="account-single-ticket.html">Single Ticket</a></li>
                     </ul>
                   </li>
+
+
                   <li><a class="dropdown-item" href="account-signin.html">Sign In / Sign Up</a></li>
                   <li><a class="dropdown-item" href="account-password-recovery.html">Changer Mot de Passe</a></li>
                 </ul>
@@ -248,4 +230,4 @@
         </div>
         </div>
       </div>
-  </header>
+</header>

@@ -1,11 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GameCenter</title>
+        <meta charset="utf-8">
+        <title>GameCenter</title>
 
+        <meta name="description" content="GameCenter - Bootstrap E-commerce Template">
+        <meta name="keywords" content="bootstrap, shop, e-commerce, market, modern, responsive,  business, mobile, bootstrap, html5, css3, js, gallery, slider, touch, creative, clean">
+        <meta name="author" content="Createx Studio">
+        <!-- Viewport-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon and Touch Icons-->
+        <!-- <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" color="#fe6a6a" href="safari-pinned-tab.svg">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff"> -->
+        <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
+
+
+        <link href="{{asset('bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+        <link href="{{asset('boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+        <link href="{{asset('boxicons/css/boxicons.css')}}" rel="stylesheet">
+
+       <style>
+         #links {
+           color: #fff;
+         }
+
+         #links:hover {
+           color: #BE4AFB;
+           transition: all 1s;
+         }
+       </style>
+
+        <link rel="stylesheet" media="screen" href="{{asset('css/simplebar.min.css')}}"/>
+        <link rel="stylesheet" media="screen" href="{{asset('css/tiny-slider.css')}}"/>
+        <!-- Main Theme Styles + Bootstrap-->
+        <link rel="stylesheet" media="screen" href="{{asset('css/theme.min.css')}}">
+        <!-- Google Tag Manager-->
+        <script>
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-WKV3GT5');
+        </script>
 </head>
 <body>
     @extends ('Accueil')
@@ -91,7 +132,7 @@
                     <h3 class="h2 text-light fw-light pb-1 from-start">Ça vient d'arriver !</h3>
                     <h2 class="text-light display-5 from-start delay-1"><span style="color:#BE4AFB">Manettes Customisables</span></h2>
                     <p class="fs-lg text-light pb-3 from-start delay-2">Ps5, Ps4, Xbox one, Xbox série X &amp; ...</p>
-                    <div class="d-table scale-up delay-4 mx-auto mx-lg-0"><a class="btn btn-primary"  style="background-color:transparent;border: 1px solid #BE4AFB;border-radius: 15px;" href="shop-grid-ls.html"><span style="color:#BE4AFB">Acheter</span><i class="bi-arrow-right ms-2 me-n1" style="color:#BE4AFB;"></i></a></div>
+                    <div class="d-table scale-up delay-4 mx-auto mx-lg-0"><a class="btn btn-primary"  style="background-color:transparent;border: 1px solid #BE4AFB;border-radius: 15px;" href="{{route('boutique')}}"><span style="color:#BE4AFB">Acheter</span><i class="bi-arrow-right ms-2 me-n1" style="color:#BE4AFB;"></i></a></div>
                   </div>
                 </div>
               </div>
@@ -104,7 +145,7 @@
                     <h3 class="h2 text-light fw-light pb-1 from-top">Soit performant</h3>
                     <h2 class="text-light display-5 from-top delay-1"><span style="color:#BE4AFB">Alien est chez nous</span></h2>
                     <p class="fs-lg text-light pb-3 from-top delay-2">Core i9 &amp; Invidia GT Force...</p>
-                    <div class="d-table scale-up delay-4 mx-auto mx-lg-0"><a class="btn btn-primary"  style="background-color:transparent;border: 1px solid #BE4AFB;border-radius: 15px;" href="shop-grid-ls.html"><span style="color:#BE4AFB">Acheter</span><i class="bi-arrow-right ms-2 me-n1" style="color:#BE4AFB;"></i></a></div>
+                    <div class="d-table scale-up delay-4 mx-auto mx-lg-0"><a class="btn btn-primary"  style="background-color:transparent;border: 1px solid #BE4AFB;border-radius: 15px;" href="{{route('boutique')}}"><span style="color:#BE4AFB">Acheter</span><i class="bi-arrow-right ms-2 me-n1" style="color:#BE4AFB;"></i></a></div>
                   </div>
                 </div>
               </div>
@@ -117,7 +158,7 @@
                     <h3 class="h2 text-light fw-light pb-1 from-bottom">Super ! Découvrer nos nouveaux casques.</h3>
                     <h2 class="text-light display-5 from-bottom delay-1"><span style="color:#BE4AFB">Casque VR</span></h2>
                     <p class="fs-lg text-light pb-3 from-bottom delay-2">HDMI, Port Usb, Ps5, Ps4 &amp; ...</p>
-                    <div class="d-table scale-up delay-4 mx-auto mx-lg-0"><a class="btn btn-primary"  style="background-color:transparent;border: 1px solid #BE4AFB;border-radius: 15px;" href="shop-grid-ls.html"><span style="color:#BE4AFB">Acheter</span><i class="bi-arrow-right ms-2 me-n1" style="color:#BE4AFB;"></i></a></div>
+                    <div class="d-table scale-up delay-4 mx-auto mx-lg-0"><a class="btn btn-primary"  style="background-color:transparent;border: 1px solid #BE4AFB;border-radius: 15px;" href="{{route('boutique')}}"><span style="color:#BE4AFB">Acheter</span><i class="bi-arrow-right ms-2 me-n1" style="color:#BE4AFB;"></i></a></div>
                   </div>
                 </div>
               </div>
@@ -762,7 +803,7 @@
                   <div class="order-md-2">
                     <h3 class="mb-1" style="color: #fff;">{{$category->nom="Ordinateurs"}}</h3><a class="fs-md" style="color:#6B6BDD;" href="shop-grid-ls.html">Alien, Predator, DEL,...<i class="bi-arrow-right fs-xs align-middle ms-1"></i></a>
                   </div>
-                  <div class="tns-carousel-controls order-md-1" id="for-men">
+                  <div class="tns-carousel-controls" id="for-kids">
                     <button type="button"><i class="bi-arrow-left"></i></button>
                     <button type="button"><i class="bi-arrow-right"></i></button>
                   </div>

@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    <head>
+<head>
         <meta charset="utf-8">
         <title>GameCenter</title>
 
@@ -47,7 +47,7 @@
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-WKV3GT5');
         </script>
-      </head>
+</head>
 
 <body>
 
@@ -127,9 +127,9 @@
         <div class="pb-4 fs-xs text-light opabity-50 text-center text-md-start">© All rights reserved. Made by <a class="text-light" href="https://createx.studio/" target="_blank" rel="noopener">Createx Studio</a></div>
       </div>
     </div>
-  </footer>
+</footer>
 
-    <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon bi-arrow-up">   </i></a>
+    <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon bi-arrow-up"></i></a>
     <!-- Vendor scrits: js libraries and plugins-->
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('js/simplebar.min.js')}}"></script>
