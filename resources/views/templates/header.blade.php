@@ -3,7 +3,7 @@
     <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
     <div class="navbar-sticky bg-light">
       <div class="navbar navbar-expand-lg navbar-light" style="background-color: #000008;">
-        <div class="container"><a class="navbar-brand d-none d-sm-block flex-shrink-0" href="index.html"><img src="produits/logo-dark.png" width="142" alt="GameCenter"></a><a class="navbar-brand d-sm-none flex-shrink-0 me-2" href="index.html"><img src="produits/logo-icon.png" width="74" alt="GameCenter"></a>
+        <div class="container"><a class="navbar-brand d-none d-sm-block flex-shrink-0"><img src="{{asset('produits/logo-dark.png')}}" width="142" alt="GameCenter"></a>
 
           <div class="input-group d-none d-lg-flex mx-4">
             <input class="form-control rounded-end pe-5" type="text" placeholder="Recherche" style="border: 1px solid #BE4AFB;background-color: transparent;"><i class="bi-search position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-3"></i>
@@ -14,47 +14,22 @@
               <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi-heart"></i></div></a><a class="navbar-tool ms-1 ms-lg-0 me-n1 me-lg-2" href="#signin-modal" data-bs-toggle="modal">
               <div class="navbar-tool-icon-box"><i class="navbar-tool-icon bi bi-person"></i></div>
               <div class="navbar-tool-text ms-n3"><small>Bonjour, Sign in</small>Mon Compte</div></a>
-            <div class="navbar-tool dropdown ms-3"><a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="shop-cart.html"><span class="navbar-tool-label">4</span><i class="navbar-tool-icon bi-cart"></i></a><a class="navbar-tool-text" href="shop-cart.html"><small>Panier</small>$265.00</a>
+            <div class="navbar-tool dropdown ms-3"><a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="shop-cart.html"><span class="navbar-tool-label">{{Cart::count()}}</span><i class="navbar-tool-icon bi-cart"></i></a><a class="navbar-tool-text" href="{{route('cart.index')}}"><small>Panier</small>$265.00</a>
               <!-- Cart dropdown-->
               <div class="dropdown-menu dropdown-menu-end">
                 <div class="widget widget-cart px-3 pt-2 pb-3" style="width: 20rem;">
                   <div style="height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-                    <div class="widget-cart-item pb-2 border-bottom">
-                      <button class="btn-close text-danger" type="button" aria-label="Remove"><span aria-hidden="true">&times;</span></button>
-                      <div class="d-flex align-items-center"><a class="flex-shrink-0" href="shop-single-v1.html"><img src="produits/shop/cart/widget/01.jpg" width="64" alt="Product"></a>
-                        <div class="ps-2">
-                          <h6 class="widget-product-title"><a href="shop-single-v1.html">Women Colorblock Sneakers</a></h6>
-                          <div class="widget-product-meta"><span class="text-accent me-2">$150.<small>00</small></span><span class="text-muted">x 1</span></div>
-                        </div>
-                      </div>
-                    </div>
+                    @foreach ($articles as $article)
                     <div class="widget-cart-item py-2 border-bottom">
                       <button class="btn-close text-danger" type="button" aria-label="Remove"><span aria-hidden="true">&times;</span></button>
-                      <div class="d-flex align-items-center"><a class="flex-shrink-0" href="shop-single-v1.html"><img src="produits/shop/cart/widget/02.jpg" width="64" alt="Product"></a>
+                      <div class="d-flex align-items-center"><a class="flex-shrink-0" href="shop-single-v1.html"><img src="{{asset('produits/'.$article->photo_produit)}}" width="64" alt="Product"></a>
                         <div class="ps-2">
-                          <h6 class="widget-product-title"><a href="shop-single-v1.html">TH Jeans bity Backpack</a></h6>
-                          <div class="widget-product-meta"><span class="text-accent me-2">$79.<small>50</small></span><span class="text-muted">x 1</span></div>
+                          <h6 class="widget-product-title"><a href="shop-single-v1.html">{{$article->nom}}</a></h6>
+                          <div class="widget-product-meta"><span class="text-accent me-2">{{$article->prix_ht}}<small>FCFA</small></span><span class="text-muted">x 1</span></div>
                         </div>
                       </div>
                     </div>
-                    <div class="widget-cart-item py-2 border-bottom">
-                      <button class="btn-close text-danger" type="button" aria-label="Remove"><span aria-hidden="true">&times;</span></button>
-                      <div class="d-flex align-items-center"><a class="flex-shrink-0" href="shop-single-v1.html"><img src="produits/shop/cart/widget/03.jpg" width="64" alt="Product"></a>
-                        <div class="ps-2">
-                          <h6 class="widget-product-title"><a href="shop-single-v1.html">3-Color Sun Stash Hat</a></h6>
-                          <div class="widget-product-meta"><span class="text-accent me-2">$22.<small>50</small></span><span class="text-muted">x 1</span></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="widget-cart-item py-2 border-bottom">
-                      <button class="btn-close text-danger" type="button" aria-label="Remove"><span aria-hidden="true">&times;</span></button>
-                      <div class="d-flex align-items-center"><a class="flex-shrink-0" href="shop-single-v1.html"><img src="produits/shop/cart/widget/04.jpg" width="64" alt="Product"></a>
-                        <div class="ps-2">
-                          <h6 class="widget-product-title"><a href="shop-single-v1.html">Cotton Polo Regular Fit</a></h6>
-                          <div class="widget-product-meta"><span class="text-accent me-2">$9.<small>00</small></span><span class="text-muted">x 1</span></div>
-                        </div>
-                      </div>
-                    </div>
+                    @endforeach
                   </div>
                   <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
                     <div class="fs-sm me-2 py-2"><span class="text-muted">Subtotal:</span><span class="text-accent fs-base ms-1">$265.<small>00</small></span></div><a class="btn btn-outline-secondary btn-sm" href="shop-cart.html">Expand cart<i class="bi-arrow-right ms-1 me-n1"></i></a>
@@ -78,7 +53,7 @@
                 <div class="dropdown-menu px-2 pb-4">
                   <div class="d-flex flex-wrap flex-sm-nowrap">
                     <div class="mega-dropdown-column pt-3 pt-sm-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/accs.jpg" alt="Casques"></a>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="{{asset('produits/accs.jpg')}}" alt="Casques"></a>
                         <h6 class="fs-base mb-2">Casques</h6>
                         <ul class="widget-list">
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Women's clothing</a></li>
@@ -88,7 +63,7 @@
                       </div>
                     </div>
                     <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/32.jpg" alt="Manettes"></a>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="{{asset('produits/32.jpg')}}" alt="Manettes"></a>
                         <h6 class="fs-base mb-2">Consoles</h6>
                         <ul class="widget-list">
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Women's shoes</a></li>
@@ -98,7 +73,7 @@
                       </div>
                     </div>
                     <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/lg03.jpg" alt="Smartphones"></a>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="{{asset('produits/lg03.jpg')}}" alt="Smartphones"></a>
                         <h6 class="fs-base mb-2">Accéssoires</h6>
                         <ul class="widget-list">
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Smartphones &amp; Tablets</a></li>
@@ -110,7 +85,7 @@
                   </div>
                   <div class="d-flex flex-wrap flex-sm-nowrap">
                     <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="produits/03.jpg" alt="Playstations"></a>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="{{asset('produits/03.jpg')}}" alt="Playstations"></a>
                         <h6 class="fs-base mb-2">Ordinateurs</h6>
                         <ul class="widget-list">
                           <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Home furniture</a></li>

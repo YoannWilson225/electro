@@ -15,17 +15,16 @@ class FirstController extends Controller
         //dd($articles);
         $categories = Category::where('is_online',1)->get();
         return view('shops.index', compact('articles', 'categories'));
-
     }
 
 
-    public function article(Request $request){
-        //SELECT
-        //dd($request->id);
-       // $categories = Category::where('is_online',1)->get();
-        $article = Article::find($request->id);
-        return view('shop.article', compact('article'));
-    }
+    // public function article(Request $request){
+    //     //SELECT
+    //     //dd($request->id);
+    //    // $categories = Category::where('is_online',1)->get();
+    //     $article = Article::find($request->id);
+    //     return view('shops.article', compact('article'));
+    // }
 
 
     public function Category(Request $request){

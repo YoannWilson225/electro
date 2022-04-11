@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
-use App\Models\Category;
 use Illuminate\Http\Request;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
-class BoutiqueController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,7 @@ class BoutiqueController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
-        //dd($articles);
-        $categories = Category::where('is_online',1)->get();
-
-        return view('boutique', compact('articles', 'categories'));
+        return view('cart.index');
     }
 
     /**
@@ -40,8 +36,19 @@ class BoutiqueController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $duplicata = Cart::search(function ($cartItem, $rowId) use ($request){
+            return $cartItem->id == $request->id;
+        });
+
+        if($duplicata->isNotEmpty()) {
+            return redirect()->route('boutique')->with('success', 'Le produit a déjà été ajouté.');
+        }
+
+        $article = Article::find($request->id);
+
+        Cart::add($article->id, $article->nom, 1, $article->prix_ht)->associate('App\Article');
+        return redirect()->route('boutique')->with('success', 'Le produit a bien été ajouté.');
+     }
 
     /**
      * Display the specified resource.
@@ -49,10 +56,9 @@ class BoutiqueController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Article $id)
+    public function show($id)
     {
-       $articles = Article::find($id);
-       return view('shops.article', compact('articles'));
+        //
     }
 
     /**
