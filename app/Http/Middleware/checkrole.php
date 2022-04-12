@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class checkrole
+class Checkrole
 {
     /**
      * Handle an incoming request.
@@ -17,7 +17,8 @@ class checkrole
      */
     public function handle(Request $request, Closure $next, $role)
     {
-        if (Auth::user()->role!==$role) {
+        if (Auth::user()->role!==$role)
+        {
             abort(403);
         }
         return $next($request);

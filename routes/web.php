@@ -36,22 +36,20 @@ Route::get('/category/{id} ', [FirstController::class, 'category'])->name('voir_
 
 Auth::routes();
 
-Route::middleware(['auth', 'role:admin'])->group(function(){
-    Route::get('/private', function(){
-        return 'Bonjour Admin';
-    });
-});
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
 //Route pour mon panier
 Route::get('/panier', [CartController::class, 'index'])->name('cart.index');
 
 Route::post('/panier/ajouter', [CartController::class, 'store'])->name('cart.store');
+Route::delete('/panier/{rowId}', [CartController::class, 'destroy'])->name('cart.destroy');
 
 Route::get('/videpanier', function(){
     Cart::destroy();
 });
 
+
+// Route::get('/', function () {
+//     $user = App\Models\User::first();
+//     $user->roles()->where('name','admin')->get();
+//     $user->roles()->where('name','admin')->exists();
+//        return view('Accueil');
+//     });

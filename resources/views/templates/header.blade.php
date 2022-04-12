@@ -19,9 +19,12 @@
               <div class="dropdown-menu dropdown-menu-end">
                 <div class="widget widget-cart px-3 pt-2 pb-3" style="width: 20rem;">
                   <div style="height: 15rem;" data-simplebar data-simplebar-auto-hide="false">
-                    @foreach ($articles as $article)
+                    @foreach (Cart::content() as $article)
                     <div class="widget-cart-item py-2 border-bottom">
-                      <button class="btn-close text-danger" type="button" aria-label="Remove"><span aria-hidden="true">&times;</span></button>
+                        <form action="{{route('cart.destroy', $article->rowId)}}" method="post">
+                            @csrf
+                            @method('DELETE')
+                      <button class="btn-close text-danger" type="submit" aria-label="Remove"><span aria-hidden="true">&times;</span></button></form>
                       <div class="d-flex align-items-center"><a class="flex-shrink-0" href="shop-single-v1.html"><img src="{{asset('produits/'.$article->photo_produit)}}" width="64" alt="Product"></a>
                         <div class="ps-2">
                           <h6 class="widget-product-title"><a href="shop-single-v1.html">{{$article->nom}}</a></h6>
@@ -32,8 +35,8 @@
                     @endforeach
                   </div>
                   <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
-                    <div class="fs-sm me-2 py-2"><span class="text-muted">Subtotal:</span><span class="text-accent fs-base ms-1">$265.<small>00</small></span></div><a class="btn btn-outline-secondary btn-sm" href="shop-cart.html">Expand cart<i class="bi-arrow-right ms-1 me-n1"></i></a>
-                  </div><a class="btn btn-primary btn-sm d-block w-100" href="checkout-details.html"><i class="bi-card me-2 fs-base align-middle"></i>Checkout</a>
+                    <div class="fs-sm me-2 py-2"><span class="text-muted">Subtotal:</span><span class="text-accent fs-base ms-1">500000<small>FCFA</small></span></div>
+                  </div><a class="btn btn-primary btn-sm d-block w-100" href="{{route('cart.index')}}"><i class="bi-card me-2 fs-base align-middle"></i>Voir Panier</a>
                 </div>
               </div>
             </div>
@@ -53,45 +56,25 @@
                 <div class="dropdown-menu px-2 pb-4">
                   <div class="d-flex flex-wrap flex-sm-nowrap">
                     <div class="mega-dropdown-column pt-3 pt-sm-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="{{asset('produits/accs.jpg')}}" alt="Casques"></a>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="{{route('boutique')}}"><img src="{{asset('produits/accs.jpg')}}" alt="Casques"></a>
                         <h6 class="fs-base mb-2">Casques</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Women's clothing</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Men's clothing</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Kid's clothing</a></li>
-                        </ul>
                       </div>
                     </div>
                     <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="{{asset('produits/32.jpg')}}" alt="Manettes"></a>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="{{route('boutique')}}"><img src="{{asset('produits/32.jpg')}}" alt="Manettes"></a>
                         <h6 class="fs-base mb-2">Consoles</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Women's shoes</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Men's shoes</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Kid's shoes</a></li>
-                        </ul>
                       </div>
                     </div>
                     <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="{{asset('produits/lg03.jpg')}}" alt="Smartphones"></a>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="{{route('boutique')}}"><img src="{{asset('produits/lg03.jpg')}}" alt="Smartphones"></a>
                         <h6 class="fs-base mb-2">Accéssoires</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Smartphones &amp; Tablets</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Wearable gadgets</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">E-book readers</a></li>
-                        </ul>
                       </div>
                     </div>
                   </div>
                   <div class="d-flex flex-wrap flex-sm-nowrap">
                     <div class="mega-dropdown-column pt-4 px-2 px-lg-3">
-                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="#"><img src="{{asset('produits/03.jpg')}}" alt="Playstations"></a>
+                      <div class="widget widget-links"><a class="d-block overflow-hidden rounded-3 mb-3" href="{{route('boutique')}}"><img src="{{asset('produits/03.jpg')}}" alt="Playstations"></a>
                         <h6 class="fs-base mb-2">Ordinateurs</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Home furniture</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Office furniture</a></li>
-                          <li class="widget-list-item mb-1"><a class="widget-list-link" href="#">Lighting and decoration</a></li>
-                        </ul>
                       </div>
                     </div>
                   </div>
@@ -100,85 +83,10 @@
             </ul>
             <!-- Primary menu-->
             <ul class="navbar-nav">
-              <li class="nav-item active"><a class="nav-link toggle" id="links" href="{{route('accueil')}}" data-bs-toggle="dropdown">Accueil</a>
+              <li class="nav-item active"><a class="nav-link toggle" id="links" href="" data-bs-toggle="dropdown">Accueil</a>
               </li>
               <li class="nav-item"><a class="nav-link toggle" href="{{route('boutique')}}" data-bs-toggle="dropdown" id="links">Boutique</a>
                 <div class="dropdown-menu p-0">
-                  <div class="d-flex flex-wrap flex-sm-nowrap px-2">
-                    <div class="mega-dropdown-column pt-1 pt-lg-4 pb-4 px-2 px-lg-3">
-                      <div class="widget widget-links mb-4">
-                        <h6 class="fs-base mb-3">Shop layouts</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item"><a class="widget-list-link" href="shop-grid-ls.html">Shop Grid - Left Sidebar</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="shop-grid-rs.html">Shop Grid - Right Sidebar</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="shop-grid-ft.html">Shop Grid - Filters on Top</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="shop-list-ls.html">Shop List - Left Sidebar</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="shop-list-rs.html">Shop List - Right Sidebar</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="shop-list-ft.html">Shop List - Filters on Top</a></li>
-                        </ul>
-                      </div>
-                      <div class="widget widget-links mb-4">
-                        <h6 class="fs-base mb-3">Marketplace</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item"><a class="widget-list-link" href="marketplace-category.html">Category Page</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="marketplace-single.html">Single Item Page</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="marketplace-vendor.html">Vendor Page</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="marketplace-cart.html">Cart</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="marketplace-checkout.html">Checkout</a></li>
-                        </ul>
-                      </div>
-                      <div class="widget widget-links">
-                        <h6 class="fs-base mb-3">Grocery store</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item"><a class="widget-list-link" href="grocery-catalog.html">Product Catalog</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="grocery-single.html">Single Product Page</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="grocery-checkout.html">Checkout</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="mega-dropdown-column pt-1 pt-lg-4 pb-4 px-2 px-lg-3">
-                      <div class="widget widget-links mb-4">
-                        <h6 class="fs-base mb-3">Food Delivery</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item"><a class="widget-list-link" href="food-delivery-category.html">Category Page</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="food-delivery-single.html">Single Item (Restaurant)</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="food-delivery-cart.html">Cart (Your Order)</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="food-delivery-checkout.html">Checkout (Address &amp; Payment)</a></li>
-                        </ul>
-                      </div>
-                      <div class="widget widget-links">
-                        <h6 class="fs-base mb-3">NFT Marketplace<span class="badge bg-danger ms-1">NEW</span></h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item"><a class="widget-list-link" href="nft-catalog-v1.html">Catalog v.1</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="nft-catalog-v2.html">Catalog v.2</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="nft-single-auction-live.html">Single Item - Auction Live</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="nft-single-auction-ended.html">Single Item - Auction Ended</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="nft-single-buy.html">Single Item - Buy Now</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="nft-vendor.html">Vendor Page</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="nft-connect-wallet.html">Connect Wallet</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="nft-create-item.html">Create New Item</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="mega-dropdown-column pt-1 pt-lg-4 px-2 px-lg-3">
-                      <div class="widget widget-links mb-4">
-                        <h6 class="fs-base mb-3">Shop pages</h6>
-                        <ul class="widget-list">
-                          <li class="widget-list-item"><a class="widget-list-link" href="shop-categories.html">Shop Categories</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="shop-single-v1.html">Product Page v.1</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="shop-single-v2.html">Product Page v.2</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="shop-cart.html">Cart</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="checkout-details.html">Checkout - Details</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="checkout-shipping.html">Checkout - Shipping</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="checkout-payment.html">Checkout - Payment</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="checkout-review.html">Checkout - Review</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="checkout-complete.html">Checkout - Complete</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="order-tracking.html">Order Tracking</a></li>
-                          <li class="widget-list-item"><a class="widget-list-link" href="comparison.html">Product Comparison</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </li>
               <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="links" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Compte</a>
@@ -194,8 +102,6 @@
                       <li><a class="dropdown-item" href="account-single-ticket.html">Single Ticket</a></li>
                     </ul>
                   </li>
-
-
                   <li><a class="dropdown-item" href="account-signin.html">Sign In / Sign Up</a></li>
                   <li><a class="dropdown-item" href="account-password-recovery.html">Changer Mot de Passe</a></li>
                 </ul>

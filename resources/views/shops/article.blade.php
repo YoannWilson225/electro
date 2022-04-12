@@ -165,7 +165,7 @@
 
                 <form  action="{{route('cart.store')}}" class="mb-grid-gutter" method="post">
                     @csrf
-                    <input type="hidden" name="id" value="{{$article->id}}">
+                    <input type="hidden" name="id" value="{{$article->article_id}}">
                   <div class="mb-3 d-flex align-items-center">
                     <select class="form-select me-3" style="width: 5rem;">
                       <option value="1">1</option>

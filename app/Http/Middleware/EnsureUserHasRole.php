@@ -16,10 +16,10 @@ class EnsureUserHasRole
      */
     public function handle(Request $request, Closure $next, string $role)
     {
-        if($request->user()->role === $role)
-        {
+        if($request->user()->roles()->where('name', $role)->exists()){
             return $next($request);
-        }else{
+        }
+        else{
             abort(403);
         }
     }

@@ -194,7 +194,7 @@
                         @foreach ($articles as $article)
                         <div class="col-lg-4 col-6 px-0 px-sm-2 mb-sm-4">
                           <div class="card product-card card-static">
-                            <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="bi-heart"></i></button><a class="card-img-top d-block overflow-hidden" href=""{{route('voir_produits_par_cat', ['id'=> $article->category->id=1])}}"><img src="{{asset('produits/'.$article->photo_produit)}}"  alt="Product"></a>
+                            <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="bi-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="{{route('voir_produit',$article->id)}}"><img src="{{asset('produits/'.$article->photo_produit)}}"  alt="Product"></a>
                             <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">{{($article->nom)}}</a>
                               <h3 class="product-title fs-sm"><a href="shop-single-v1.html">{{($article->description)}}</a></h3>
                               <div class="d-flex justify-content-between">

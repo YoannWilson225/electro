@@ -47,7 +47,7 @@
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
           })(window,document,'script','dataLayer','GTM-WKV3GT5');
         </script>
-      </head>
+    </head>
 
 <body>
 @include('templates.header')
@@ -270,8 +270,11 @@
               @foreach ($articles as $article)
                 <div class="col-md-4 col-sm-6 px-2 mb-4">
                   <div class="card product-card">
-                    <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="bi-heart"></i></button><a class="card-img-top d-block overflow-hidden" href="{{ route('voir_produit',$article->id) }}"><img src="{{asset('produits/'.$article->photo_produit)}}" alt="Product"></a>
-                    <div class="card-body py-2"><a class="product-meta d-block fs-xs pb-1" href="#">{{$article->nom}}</a>
+                    <button class="btn-wishlist btn-sm" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to wishlist"><i class="bi-heart"></i></button>
+                    <a class="card-img-top d-block overflow-hidden" href="{{ route('voir_produit',$article->id) }}">
+                    <img src="{{asset('produits/'.$article->photo_produit)}}" alt="Product"></a>
+                    <div class="card-body py-2">
+                        <a class="product-meta d-block fs-xs pb-1" href="{{asset('produits/'.$article->photo_produit)}}">{{$article->nom}}</a>
                       <h3 class="product-title fs-sm"><a href="{{ route('voir_produit',$article->id) }}">{{$article->description}}</a></h3>
                       <div class="d-flex justify-content-between">
                         <div class="product-price"><span class="text-muted fs-sm">{{$article->prix_ht}}</span></div>
